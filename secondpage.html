@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>THE SLIDESHOW</title>
+        <link rel="stylesheet" href="slideshow.css">
+    </head>
+    <body>
+        <h1>WELCOME</h1>
+        <div class="slideshow-container">
+            <div class="mySlides">
+              <img src="THREE JOKERS due in June from Geoff Johns, Jason Fabok.jpg" style="width:100%">
+            </div>
+          
+            <div class="mySlides">
+              <img src="Pixel Art Mashups.jpg" style="width:100%">
+            </div>
+          
+            <div class="mySlides">
+              <img src="download (2).jpg" style="width:100%">
+            </div>
+          </div>
+          
+          
+    </body>
+</html>
+<script>
+var slideIndex = 0;
+var slides = document.querySelectorAll('.mySlides');
+var startX = 0;
+var currentX = 0;
+var touchingSlide = false;
+
+showSlides();
+
+document.addEventListener('touchstart', function (event) {
+  if (event.target.closest('.mySlides')) {
+    startX = event.touches[0].pageX;
+    touchingSlide = true;
+  }
+}, false);
+
+document.addEventListener('touchmove', function (event) {
+  if (touchingSlide) {
+    currentX = event.touches[0].pageX - startX;
+    slides.forEach(function (slide) {
+      slide.style.transform = 'translateX(' + (currentX - slideIndex * 100) + '%)';
+    });
+  }
+}, false);
+
+document.addEventListener('touchend', function (event) {
+  if (touchingSlide) {
+    touchingSlide = false;
+    if (Math.abs(currentX) > 50) {
+      if (currentX > 0) {
+        slideIndex--;
+      } else {
+        slideIndex++;
+      }
+    }
+    showSlides();
+  }
+}, false);
+
+function showSlides() {
+  slideIndex = (slideIndex + slides.length) % slides.length;
+  slides.forEach(function (slide) {
+    slide.style.transform = 'translateX(-' + (100 * slideIndex) + '%)';
+  });
+}
+
+
+</script>

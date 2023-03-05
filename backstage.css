@@ -1,0 +1,238 @@
+body{
+    margin: 0;
+    background-color:black;
+    height:100vh;
+    display:grid;
+    place-items:center;
+}
+.card{
+    
+    background-color: rgba(255,255,255,0.05);
+    position: absolute;
+    transition:transform 800ms cubic-bezier(.05,.43,.25,.95);
+}
+.big-cards{
+  width:30vmin;
+  border-radius:1vmin;
+
+}
+.small-cards
+{
+ width:12vmin;
+ border-radius:2vmin;
+ top:50%;
+ left :50%;
+ transform: translate(-50%, -50%);
+}
+.card-groups,
+.card-group,
+.card{
+    aspect-ratio: 5 / 7;
+}
+.card-groups,
+.card-group,
+.big-cards{
+    width:30vmin;
+}
+.card-group{
+    position:absolute;
+    transition:tranform 400ms ease-out;
+}
+.big-cards:nth-child(2){
+    background-image: url("Jhon Wick.jpg");
+   background-size:cover;
+   
+    transform:translate(-15%) rotate(-1deg);
+}
+
+.big-cards:nth-child(4){
+    background-image: url("https://i.pinimg.com/236x/bc/e2/5d/bce25de49e366343cdfb297855a4b1e6.jpg");
+    background-size:cover;
+    transform:rotate(2deg);
+}
+
+.big-cards:nth-child(6){
+    background-image: url("Once Upon a Time in Hollywood (2019) Movie Review.jpg");
+    background-size:cover;
+    transform:translate(-6%) rotate(-3deg);
+}
+
+.big-cards:nth-child(8){
+    background-image: url("https://i.pinimg.com/236x/05/bf/8f/05bf8f2973ec918c1ce1f09830dc1ef9.jpg");
+    background-size:cover;
+    transform:translate(10%, 3%) rotate(5deg);
+}
+
+
+.small-cards:nth-child(1){
+    background-image: url("THE WEEKND WALLPAPER.jpg");
+   background-size:cover;
+   background-position: center;
+}
+
+.small-cards:nth-child(3){
+    background-image: url("See Exclusive BTS Pictures from Davido and Chris Brown’s ‘Blow My Mind’ Video Shoot.png");
+   background-size:cover;
+   background-position: center;
+}
+
+.small-cards:nth-child(5){
+    background-image: url("download (2).jpg");
+   background-size:cover;
+   background-position: center;
+}
+
+.small-cards:nth-child(7){
+    background-image: url("𝘛𝘩𝘦 𝘛𝘢𝘵𝘵𝘰𝘰 𝘈𝘳𝘵𝘪𝘴𝘵® 𝘽𝙣𝙝𝙖 𝙭 𝘽𝙡𝙖𝙘𝙠 𝙍𝙚𝙖𝙙𝙚𝙧 - 𓂀 𝔽𝕒𝕞𝕚𝕝𝕚𝕒𝕣 𝔽𝕒𝕔𝕖𝕤 𓂀.jpg");
+   background-size:cover;
+   background-position: center;
+}
+
+
+
+.card-group:hover >.big-cards:nth-child(2){
+    transform:translate(-75%, 16%)  rotate(-24deg);
+}
+
+.card-group:hover >.big-cards:nth-child(4){
+    transform:translate(-25%, 8%)  rotate(-8deg);
+}
+
+.card-group:hover >.big-cards:nth-child(6){
+    transform:translate(25%, 8%)  rotate(8deg);
+}
+
+.card-group:hover >.big-cards:nth-child(8){
+    transform:translate(75%, 16%)  rotate(24deg);
+}
+
+.card-group:hover >.small-cards:nth-child(1){
+    transform:translate(200%, -180%)  rotate(-15deg);
+}
+
+.card-group:hover >.small-cards:nth-child(3){
+    transform:translate(160%, 170%)  rotate(15deg);
+}
+
+.card-group:hover >.small-cards:nth-child(5){
+    transform:translate(-280%, -170%)  rotate(15deg);
+}
+
+.card-group:hover >.small-cards:nth-child(7){
+    transform:translate(-280%, 180%)  rotate(-15deg);
+}
+
+.card-swiper-buttons{
+    margin-top:8vmin;
+    display:flex;
+    justify-content: space-around;
+    
+    
+}
+
+.card-swiper-buttons > button{
+    font-size:3.5vmin;
+    border:0.4vmin solid rgb(39, 204, 53);
+    border-radius: 100%;
+    color:white;
+    background-color:transparent;
+    height:12vmin;
+    cursor:pointer;
+    width:12vmin;
+}
+#love-button{
+    color:rgb(12, 168, 179);
+    border-color:rgb(22, 25, 235);
+}
+
+.card-group[data-status="unknown"]{
+    transform:scale(0);
+}
+
+.card-group[data-status="active"]{
+    transition-delay: 300ms;
+    transform: translateX(0) scale(1);
+}
+
+.card-group[data-index="1"]>.big-cards:nth-child(2){
+    background-image: url("𝘛𝘩𝘦 𝘛𝘢𝘵𝘵𝘰𝘰 𝘈𝘳𝘵𝘪𝘴𝘵® 𝘽𝙣𝙝𝙖 𝙭 𝘽𝙡𝙖𝙘𝙠 𝙍𝙚𝙖𝙙𝙚𝙧 - 𓂀 𝔽𝕒𝕞𝕚𝕝𝕚𝕒𝕣 𝔽𝕒𝕔𝕖𝕤 𓂀.jpg");
+    background-position:center;
+    background-size:cover;
+}
+.card-group[data-index="1"]>.big-cards:nth-child(4){
+    background-image: url("THE WEEKND WALLPAPER.jpg");
+    background-position:center;
+    background-size:cover;
+}
+
+.card-group[data-index="1"]>.big-cards:nth-child(6){
+    background-image: url("download (2).jpg");
+    background-position:center;
+    background-size:cover;
+}
+
+.card-group[data-index="1"]>.big-cards:nth-child(8){
+    background-image: url("See Exclusive BTS Pictures from Davido and Chris Brown’s ‘Blow My Mind’ Video Shoot.png");
+    background-position:center;
+    background-size:cover;
+    transition: 500ms;
+}
+
+
+
+
+
+.card-group[data-index="2"]>.big-cards:nth-child(2){
+    background-image: url("https://i.pinimg.com/236x/8a/16/68/8a1668bc253093ce844e62978167a348.jpg");
+    background-position:center;
+    background-size:cover;
+}
+.card-group[data-index="2"]>.big-cards:nth-child(4){
+    background-image: url("https://i.pinimg.com/236x/b0/d8/3a/b0d83a668779ba099cf49ec48ca601c1.jpg");
+    background-position:center;
+    background-size:cover;
+}
+
+.card-group[data-index="2"]>.big-cards:nth-child(6){
+    background-image: url("https://i.pinimg.com/236x/e5/2a/70/e52a70fbda3497902fee9bc25c4cba33.jpg");
+    background-position:center;
+    background-size:cover;
+}
+
+.card-group[data-index="2"]>.big-cards:nth-child(8){
+    background-image: url("https://i.pinimg.com/564x/c2/c7/d6/c2c7d64ce58f78448fa40bf158b9818a.jpg");
+    background-position:center;
+    background-size:cover;
+}
+
+.card-group[data-index="2"]>.small-cards:nth-child(1){
+    background-image: url("https://i.pinimg.com/236x/49/69/1d/49691df1001ea23a379d8f762921f3c3.jpg");
+    background-position:center;
+    background-size:cover;
+}
+.card-group[data-index="2"]>.small-cards:nth-child(3){
+    background-image: url("https://i.pinimg.com/236x/43/75/fc/4375fcb0f8e650b2fdb77545f25f857f.jpg");
+    background-position:center;
+    background-size:cover;
+}
+
+.card-group[data-index="2"]>.small-cards:nth-child(5){
+    background-image: url("https://i.pinimg.com/236x/4a/bc/a8/4abca8abdfda6359581be1153434266f.jpg");
+    background-position:center;
+    background-size:cover;
+}
+
+.card-group[data-index="2"]>.small-cards:nth-child(7){
+    background-image: url("https://i.pinimg.com/236x/62/5f/e3/625fe3d8b71f309ab7ba76db6a9a56d6.jpg");
+    background-position:center;
+    background-size:cover;
+}
+.card-group[data-status="after"]{
+    transform:translateX(50%) scale(0);
+}
+
+.card-group[data-status="becoming-active-from-before"]{
+    transform:translateX(-50%) scale(0);
+    transition:none;
+}
+
